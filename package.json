@@ -11,10 +11,14 @@
   },
   "scripts": {
     "browser:start": "browser-sync start --server --files dist/css/*.css dist/js/*.js --no-notify",
-    "js:compile": "rollup --config",
-    "sass": "run-s sass:compile sass:postcss",
+    "build": "run-s js:build sass:build",
+    "js:build": "rollup --config",
+    "js:watch": "rollup --config --watch",
+    "sass:build": "run-s sass:compile sass:postcss",
     "sass:compile": "sass src/scss:dist/css --load-path=src/scss --style=compressed",
-    "sass:postcss": "postcss dist/css/*.css --use autoprefixer --replace --map"
+    "sass:postcss": "postcss dist/css/*.css --use autoprefixer --replace --map",
+    "sass:watch": "sass src/scss:dist/css --load-path=src/scss --style=compressed --watch",
+    "serve": "run-p browser:start js:watch sass:watch"
   },
   "devDependencies": {
     "autoprefixer": "^10.3.4",
