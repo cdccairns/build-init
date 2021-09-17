@@ -10,6 +10,7 @@
     "url": "https://github.com/cdccairns/build-init.git"
   },
   "scripts": {
+    "browser:start": "browser-sync start --server --files dist/css/*.css dist/js/*.js --no-notify",
     "js:compile": "rollup --config",
     "sass": "run-s sass:compile sass:postcss",
     "sass:compile": "sass src/scss:dist/css --load-path=src/scss --style=compressed",
@@ -17,6 +18,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.3.4",
+    "browser-sync": "^2.27.5",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.3.6",
     "postcss-cli": "^8.3.1",
