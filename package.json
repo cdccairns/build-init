@@ -12,7 +12,11 @@
   "scripts": {
     "browser:start": "browser-sync start --server --files dist/css/*.css dist/js/*.js --no-notify",
     "build": "run-s js:build sass:build",
+    "css:clean": "rm -rf dist/css",
+    "fonts:clean": "rm -rf dist/fonts",
+    "fonts:copy": "cp -r src/fonts dist/fonts",
     "js:build": "rollup --config",
+    "js:clean": "rm -rf dist/js",
     "js:watch": "rollup --config --watch",
     "sass:build": "run-s sass:compile sass:postcss",
     "sass:compile": "sass src/scss:dist/css --load-path=src/scss --style=compressed",
