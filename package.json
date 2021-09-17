@@ -10,7 +10,7 @@
     "url": "https://github.com/cdccairns/build-init.git"
   },
   "scripts": {
-    "browser:start": "browser-sync start --server --files dist/css/*.css dist/js/*.js --no-notify",
+    "browser:start": "browser-sync start --server --files dist/css/*.css dist/js/*.js --no-notify --no-ui",
     "build": "run-s clean:dist css:build js:build",
     "clean:dist": "run-s clean:dist:*",
     "clean:dist:css": "rm -rf dist/css",
