@@ -1,14 +1,16 @@
 'use strict';
 
-import { babel } from '@rollup/plugin-babel';
-import { default as resolve } from '@rollup/plugin-node-resolve';
+import babel from '@rollup/plugin-babel';
+import eslint from '@rollup/plugin-eslint';
+import resolve from '@rollup/plugin-node-resolve';
 
 const config = [
   {
     input: 'src/js/main.js',
     plugins: [
-      babel(),
-      resolve()
+      resolve(),
+      eslint(),
+      babel()
     ],
     output: {
       file: 'dist/js/main.js',
