@@ -22,7 +22,7 @@
     "js:build": "rollup --config",
     "js:watch": "rollup --config --watch",
     "sass:compile": "sass src/scss:dist/css --load-path=src/scss --no-source-map",
-    "sass:watch": "chokidar src/scss/**/*.scss -c 'npm run css:build'",
+    "sass:watch": "chokidar src/scss/**/*.scss -c 'npm run css:build' --initial",
     "serve": "run-p browser:start js:watch sass:watch"
   },
   "devDependencies": {
